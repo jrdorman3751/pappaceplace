@@ -1,19 +1,57 @@
 <!DOCTYPE html>
+<!--
+  PAPPACE PLACE LEARNING CENTER — index.html
+  pappaceplace.com
+
+  HOW THIS FILE IS ORGANIZED:
+  1. <head>          — page metadata, fonts, stylesheet link (not visible)
+  2. <nav>           — sticky top navigation bar
+  3. .hero           — first section: heading, subtitle, CTA, graphic
+  4. #about          — two-column mission text + value cards
+  5. #what-we-offer  — subject card grid (dark warm background)
+  6. #who-we-help    — K-5 and 6-8 grade band display
+  7. #contact        — phone, email, and address cards
+  8. <footer>        — bottom bar
+  9. <script>        — nav toggle, smooth scroll, fade-in animations
+
+  TO EDIT TEXT: find it between the HTML tags and change it.
+  TO ADD A SUBJECT CARD: copy a .subject-card block in #what-we-offer.
+  TO ADD A VALUE CARD: copy a .value-card block in #about.
+  PLACEHOLDERS: search "PLACEHOLDER" to find spots needing updates.
+-->
 <html lang="en">
 <head>
+  <!-- Character encoding — always include, prevents garbled text -->
   <meta charset="UTF-8">
+
+  <!-- Makes the page scale correctly on phones -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tab title and browser bookmark name -->
   <title>Pappace Place Learning Center — Tutoring in New Paltz, NY</title>
+
+  <!-- Description shown in Google search results (keep under 160 characters) -->
   <meta name="description" content="Pappace Place Learning Center offers personalized tutoring for elementary and middle school students in New Paltz, NY.">
+
+  <!-- Google Fonts: preconnect speeds up font loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet — all visual styling lives in style.css -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ============================================================
+       NAV — sticky top bar
+       .wordmark = two-line brand name on the left.
+       .nav-links = page anchor links on the right.
+       .nav-toggle = hamburger ☰ button (only visible on mobile).
+       Each href="#id" scrolls to the matching <section id="...">
+       ============================================================ -->
   <nav>
     <div class="nav-inner">
+      <!-- Two-line brand name -->
       <a href="/" class="wordmark">
         <span class="wordmark-main">Pappace Place</span>
         <span class="wordmark-sub">Learning Center</span>
@@ -24,23 +62,44 @@
         <a href="#who-we-help">Who We Help</a>
         <a href="#contact">Contact</a>
       </div>
+      <!-- Hamburger button — JavaScript toggles .nav-links.open on tap -->
       <button class="nav-toggle" aria-label="Menu">☰</button>
     </div>
   </nav>
 
-  <!-- HERO -->
+
+  <!-- ============================================================
+       HERO — first section visitors see
+       Left column: eyebrow badge, heading, subtitle, buttons.
+       Right column: animated blob + three floating cards.
+       The graphic is hidden on mobile (see style.css responsive).
+       ============================================================ -->
   <section class="hero">
     <div class="hero-inner">
+
+      <!-- Left column: text content -->
       <div class="hero-text">
+        <!-- Orange pill badge above the heading -->
         <div class="hero-eyebrow">New Paltz, NY</div>
+
+        <!-- Main headline — <em> makes "thrive" italic and orange -->
         <h1>Every student<br>can <em>thrive.</em></h1>
+
+        <!-- Subtitle paragraph -->
+        <!-- PLACEHOLDER: Replace with Miss Maria's own words when ready -->
         <p class="hero-sub">Personalized tutoring for elementary and middle school students in a warm, supportive environment where curiosity is celebrated and confidence grows.</p>
-        <!-- PLACEHOLDER: Replace the line above with your own tagline or mission statement when ready. -->
+
+        <!-- Two buttons: primary CTA and ghost secondary link -->
         <div class="hero-cta">
           <a href="#contact" class="btn">Get in touch →</a>
           <a href="#what-we-offer" class="btn-ghost">Learn more</a>
         </div>
       </div>
+
+      <!-- Right column: decorative graphic
+           aria-hidden="true" hides it from screen readers (it's decorative).
+           .blob = morphing orange circle in the center.
+           .floating-card = small cards that bob up and down. -->
       <div class="hero-graphic" aria-hidden="true">
         <div class="blob">
           <div class="blob-inner">
@@ -48,155 +107,272 @@
             <span class="blob-label">Learning made fun</span>
           </div>
         </div>
+        <!-- Floating cards: positioned top-left, top-right, and bottom-center -->
         <div class="floating-card fc1"><span>✏️</span> Elementary</div>
         <div class="floating-card fc2"><span>🔬</span> Middle School</div>
         <div class="floating-card fc3"><span>⭐</span> All Subjects</div>
       </div>
+
     </div>
   </section>
 
-  <!-- ABOUT -->
+
+  <!-- ============================================================
+       ABOUT SECTION
+       Two-column layout: mission text on left, value cards on right.
+       To add a value card: copy a .value-card block and update text.
+       ============================================================ -->
   <section class="section" id="about">
     <div class="container">
       <div class="section-label">About us</div>
       <div class="about-grid">
+
+        <!-- Left column: text -->
         <div class="about-text">
           <h2>A place where students feel at home.</h2>
           <p>Pappace Place Learning Center is a tutoring center in New Paltz, NY dedicated to helping elementary and middle school students build the skills and confidence they need to succeed — in school and beyond.</p>
           <p>We believe every student learns differently. Our approach is patient, personalized, and always encouraging. Whether a student is catching up, keeping up, or getting ahead, we meet them exactly where they are.</p>
-          <!-- PLACEHOLDER: Add a note about Miss Maria's background or teaching philosophy here. -->
+          <!-- PLACEHOLDER: Add a note about Miss Maria's background or teaching philosophy here -->
         </div>
+
+        <!-- Right column: value cards
+             Each card has an emoji icon, heading, and description.
+             To add a card: copy a .value-card block. -->
         <div class="about-values">
+
           <div class="value-card">
             <div class="value-icon">🌱</div>
-            <h3>Patient &amp; Personalized</h3>
-            <p>Every session is tailored to the individual student — their pace, their style, their goals.</p>
+            <div>
+              <h3>Patient &amp; Personalized</h3>
+              <p>Every session is tailored to the individual student — their pace, their style, their goals.</p>
+            </div>
           </div>
+
           <div class="value-card">
             <div class="value-icon">💛</div>
-            <h3>Warm &amp; Encouraging</h3>
-            <p>We create a safe space where students feel comfortable asking questions and making mistakes.</p>
+            <div>
+              <h3>Warm &amp; Encouraging</h3>
+              <p>We create a safe space where students feel comfortable asking questions and making mistakes.</p>
+            </div>
           </div>
+
           <div class="value-card">
             <div class="value-icon">🎯</div>
-            <h3>Results Focused</h3>
-            <p>We celebrate progress at every level — from small wins to big breakthroughs.</p>
+            <div>
+              <h3>Results Focused</h3>
+              <p>We celebrate progress at every level — from small wins to big breakthroughs.</p>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE OFFER -->
+
+  <!-- ============================================================
+       WHAT WE OFFER SECTION
+       .section-warm = warm cream background (see style.css).
+       Four subject cards in a grid.
+       To add a subject: copy a .subject-card block.
+       To remove a subject: delete a .subject-card block.
+       ============================================================ -->
   <section class="section section-warm" id="what-we-offer">
     <div class="container">
       <div class="section-label">What we offer</div>
       <h2>General tutoring for growing minds.</h2>
       <p class="section-intro">We work with students across core subjects, helping them build strong foundations and develop good study habits that last.</p>
+
+      <!-- Subject card grid — 4 columns on desktop, 2 on tablet, 1 on mobile -->
       <div class="subjects-grid">
+
         <div class="subject-card">
           <div class="subject-icon">📖</div>
           <h3>Reading &amp; Writing</h3>
           <p>Comprehension, vocabulary, essay writing, and communication skills.</p>
         </div>
+
         <div class="subject-card">
           <div class="subject-icon">➕</div>
           <h3>Math</h3>
           <p>From basic arithmetic through pre-algebra and beyond — building real number sense.</p>
         </div>
+
         <div class="subject-card">
           <div class="subject-icon">🌍</div>
           <h3>Science &amp; Social Studies</h3>
           <p>Homework help and concept review across grade-level topics.</p>
         </div>
+
         <div class="subject-card">
           <div class="subject-icon">📝</div>
           <h3>Study Skills</h3>
           <p>Organization, note-taking, test prep, and habits that help in every class.</p>
         </div>
+
       </div>
-      <!-- PLACEHOLDER: Add session lengths, pricing, or scheduling info here when ready. -->
+      <!-- PLACEHOLDER: Add session lengths, pricing, or scheduling info here when ready -->
     </div>
   </section>
 
-  <!-- WHO WE HELP -->
+
+  <!-- ============================================================
+       WHO WE HELP SECTION
+       Two grade band cards side by side with a + between them.
+       The grade-range text is the large number e.g. "K – 5".
+       ============================================================ -->
   <section class="section" id="who-we-help">
     <div class="container">
       <div class="section-label">Who we help</div>
       <h2>Elementary &amp; middle school students.</h2>
       <p class="section-intro">We work with students in grades K–8 from New Paltz and the surrounding Hudson Valley area.</p>
+
       <div class="grades-row">
+
+        <!-- Elementary grade band -->
         <div class="grade-band">
           <div class="grade-range">K – 5</div>
           <div class="grade-label">Elementary School</div>
           <p>Building foundational skills in reading, writing, and math in a fun, low-pressure environment.</p>
         </div>
+
+        <!-- Decorative + divider (hidden on mobile) -->
         <div class="grade-divider" aria-hidden="true">+</div>
+
+        <!-- Middle school grade band -->
         <div class="grade-band">
           <div class="grade-range">6 – 8</div>
           <div class="grade-label">Middle School</div>
           <p>Navigating more complex subjects, developing independence, and preparing for high school.</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+
+  <!-- ============================================================
+       CONTACT SECTION
+       .section-contact = light orange background.
+       Three cards: phone (clickable), email (clickable), address (not a link).
+       tel: links open the phone dialer on mobile.
+       mailto: links open the visitor's email app.
+       PLACEHOLDER: Add hours of operation when ready.
+       ============================================================ -->
   <section class="section section-contact" id="contact">
     <div class="container">
       <div class="section-label">Get in touch</div>
       <h2>Ready to get started?</h2>
       <p class="section-intro">Reach out to learn more, ask questions, or schedule a first session. We'd love to hear from you.</p>
+
       <div class="contact-cards">
+
+        <!-- Phone card — tel: link opens phone dialer on mobile -->
+        <!-- PLACEHOLDER: Update phone number if it changes -->
         <a href="tel:8456618967" class="contact-card">
           <div class="contact-card-icon">📞</div>
           <div class="contact-card-label">Call or text</div>
           <div class="contact-card-value">(845) 661-8967</div>
         </a>
+
+        <!-- Email card — mailto: opens visitor's email app -->
+        <!-- PLACEHOLDER: Update email address if it changes -->
         <a href="mailto:maria@pappaceplace.com" class="contact-card">
           <div class="contact-card-icon">✉️</div>
           <div class="contact-card-label">Email</div>
           <div class="contact-card-value">maria@pappaceplace.com</div>
         </a>
+
+        <!-- Address card — plain div, not a link -->
+        <!-- PLACEHOLDER: Update address if location changes -->
         <div class="contact-card">
           <div class="contact-card-icon">📍</div>
           <div class="contact-card-label">Location</div>
           <div class="contact-card-value">1-3 Henry W Dubois Dr<br>New Paltz, NY 12561</div>
         </div>
+
       </div>
-      <!-- PLACEHOLDER: Add hours of operation here. Example: Mon–Fri 3–7pm · Sat 10am–2pm -->
+      <!-- PLACEHOLDER: Add hours of operation here when ready.
+           Example: <p style="text-align:center; margin-top:32px; color:var(--ink-muted)">
+                      Mon–Fri 3–7pm · Sat 10am–2pm
+                    </p> -->
     </div>
   </section>
 
-  <!-- FOOTER -->
+
+  <!-- ============================================================
+       FOOTER
+       Three items: business name left, copyright center, email right.
+       On mobile they stack vertically (see style.css responsive).
+       PLACEHOLDER: Update the year in the copyright line each January.
+       ============================================================ -->
   <footer>
     <div class="container footer-inner">
       <span class="footer-name">Pappace Place Learning Center</span>
       <span class="footer-copy">© 2025 · New Paltz, NY</span>
+      <!-- Clicking the footer email opens visitor's email app -->
       <a href="mailto:maria@pappaceplace.com" class="footer-email">maria@pappaceplace.com</a>
     </div>
   </footer>
 
+
+  <!-- ============================================================
+       JAVASCRIPT — small, no external libraries needed
+
+       1. MOBILE NAV TOGGLE
+          Tapping ☰ adds/removes the .open class on .nav-links,
+          which shows/hides the dropdown menu (styled in style.css).
+
+       2. SMOOTH SCROLL
+          Intercepts clicks on any link starting with # and scrolls
+          smoothly to that section instead of jumping instantly.
+
+       3. FADE-IN ON SCROLL
+          Uses IntersectionObserver to watch elements with
+          class="fade-target". When they enter the viewport,
+          adds class="visible" which triggers a CSS transition.
+          To add fade-in to a new element: add class="fade-target"
+          to it in the HTML above — no JS changes needed.
+       ============================================================ -->
   <script>
+    // ── 1. Mobile nav toggle ──
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+    // Close nav when a link is tapped (good mobile UX)
+    navLinks.querySelectorAll('a').forEach(l => {
+      l.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
 
+    // ── 2. Smooth scroll for all # anchor links ──
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
 
+    // ── 3. Fade-in on scroll ──
+    // threshold: 0.1 = animation fires when 10% of element is visible
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target); // stop watching once appeared
+        }
+      });
     }, { threshold: 0.1 });
+
+    // Add fade-in to these element types
+    // To include more elements: add their selector here
     document.querySelectorAll('.value-card, .subject-card, .grade-band, .contact-card').forEach(el => {
       el.classList.add('fade-target');
       observer.observe(el);
     });
   </script>
+
 </body>
 </html>
